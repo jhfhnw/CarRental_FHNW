@@ -2,11 +2,30 @@ package ch.fhnw.data.domain;
 
 import java.sql.Date;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
+@Entity
+@Table(name = "booking")
 public class Booking {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Integer Booking_id = 10;
+
+    @Column(name = "start_date", nullable = false)
     private Date Start_Date;
+
+    @Column(name = "end_date", nullable = false)
     private Date End_Date;
+
+    @Column(name = "booking_cost", nullable = false)
     private Number Booking_Cost;
 
     public Integer getBooking_id() {

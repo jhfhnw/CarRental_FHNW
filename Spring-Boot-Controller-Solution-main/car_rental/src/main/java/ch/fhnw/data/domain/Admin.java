@@ -1,9 +1,27 @@
 package ch.fhnw.data.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+
+
+@Entity
+@Table(name = "admin")
+
 public class Admin {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Integer User_id = 99;
+
+    @Column(name = "username", nullable = false)
     private String Username = "Joe Tester";
+
+    @Column(name = "password", nullable = false)
     private String Password = "Test1234";
 
     public int getUser_id() {

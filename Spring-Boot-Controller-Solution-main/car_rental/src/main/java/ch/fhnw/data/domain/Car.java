@@ -1,20 +1,44 @@
 package ch.fhnw.data.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "car")
 public class Car {
-    private int Car_id = 10;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private long Car_id = 10;
+
+    @Column(name = "model", nullable = false)
     private String Car_model = "Opel Astra";
+
+    @Column(name = "type", nullable = false)
     private String Car_type = "PKW";
+
+    @Column(name = "availability", nullable = false)
     private Boolean Car_availability = true;
+
+    @Column(name = "fuel", nullable = false)
     private String Type_of_fuel = "Gas";  
+
+    @Column(name = "seats")
     private Integer Seats = 4;
 
-    // constraint einfügen: @Column (int Car_id, nullable = false);
-
-public int getCar_id() {
+public long getCar_id() {
         return Car_id;
     }
 
-    public void setCar_id(int car_id) {
+    public void setCar_id(long car_id) {
         this.Car_id = car_id;
     }
 
