@@ -1,4 +1,4 @@
-package ch.fhnw.car_rental;
+package ch.fhnw.data.domain;
 
 public class Car {
     private int Car_id = 10;

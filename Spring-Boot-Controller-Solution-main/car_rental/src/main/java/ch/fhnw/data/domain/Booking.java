@@ -1,4 +1,4 @@
-package ch.fhnw.car_rental;
+package ch.fhnw.data.domain;
 
 import java.sql.Date;
 
