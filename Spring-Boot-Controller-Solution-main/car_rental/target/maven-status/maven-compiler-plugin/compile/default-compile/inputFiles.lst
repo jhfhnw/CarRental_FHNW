@@ -1,4 +1,5 @@
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/Controller/CarController.java
+/workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/Service/BookingService.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/domain/Booking.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/domain/Customer.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/Service/CarService.java

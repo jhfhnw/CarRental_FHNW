@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import ch.fhnw.car_rental.Service.CarService;
+import ch.fhnw.car_rental.service.CarService;
+import ch.fhnw.car_rental.service.BookingService;
 import ch.fhnw.car_rental.data.domain.Car;
+import ch.fhnw.car_rental.data.domain.Booking;
+import ch.fhnw.car_rental.data.domain.User;
 import ch.fhnw.car_rental.data.repository.CarRepository;
 
 import org.springframework.web.bind.annotation.RequestMethod;
