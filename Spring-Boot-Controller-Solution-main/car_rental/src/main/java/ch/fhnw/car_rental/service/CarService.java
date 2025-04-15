@@ -10,42 +10,40 @@ import java.util.List;
 public class CarService {
 
     @Autowired
-    private CarRepository CarRepository;
+    private CarRepository carRepository;
 
-    public Car findCarById(Long Car_id) {
-    Car car = CarRepository.findById(Car_id).get();
-    return car;
+    public Car findCarById(Long carId) {
+        return carRepository.findById(carId).orElse(null);
     }
+
     public List<Car> getAllCars() {
-        List<Car> carList = CarRepository.findAll();
-        return carList;
+        return carRepository.findAll();
     }
-    public Car findCarByCarModel(String Car_model) {
-        return CarRepository.findByCarModel(Car_model);
+
+    public Car findCarByCarModel(String carModel) {
+        return carRepository.findByCarModel(carModel);
     }
-    public List<Car> findAllByCarTypeContainsIgnoreCase(String Car_type) {
-        return CarRepository.findAllByCarTypeContainsIgnoreCase(Car_type);
+
+    public List<Car> findAllByCarTypeContainsIgnoreCase(String carType) {
+        return carRepository.findAllByCarTypeContainsIgnoreCase(carType);
     }
+
     public Car addCar(Car car) throws Exception {
-        if (car.getCar_model() == null || car.getCar_type() == null) {
+        if (car.getCarModel() == null || car.getCarType() == null) {
             throw new Exception("Car model and type cannot be null");
         }
-        return CarRepository.save(car);
+        return carRepository.save(car);
     }
-    public Car deleteCar(Long Car_id) {
-        Car car = findCarById(Car_id);
+
+    public Car deleteCar(Long carId) {
+        Car car = findCarById(carId);
         if (car != null) {
-            CarRepository.delete(car);
+            carRepository.delete(car);
         }
         return car;
     }
+
     public Car updateCar(Car car) {
-        return CarRepository.save(car);
-    }
-    private long getOffer(long offer) {
-        if (offer < 0) {
-            throw new IllegalArgumentException("Offer cannot be negative");
-        }
-        return offer;
+        return carRepository.save(car);
     }
 }

@@ -14,36 +14,35 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private Integer Customer_id = 0; 
+    private Integer customerId = 0; // Feldname geändert
 
     @Column(name = "username", nullable = false)
-    private String Username = "Muster Mustermann";
+    private String username = "Muster Mustermann"; // Feldname geändert
 
     @Column(name = "password", nullable = false)
-    private String Password = "Mustermann1234";
+    private String password = "Mustermann1234"; // Feldname geändert
 
-    public int getCustomer_id() {
-        return Customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.Customer_id = customer_id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
-    public void setUsername (String username) {
-        this.Username = username;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
-    public void setPassword (String password) {
-        this.Password = password;
+    public void setPassword(String password) {
+        this.password = password;
     }
-
 }

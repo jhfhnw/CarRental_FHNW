@@ -1,13 +1,10 @@
 package ch.fhnw.car_rental.data.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,69 +13,70 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private long Car_id = 10;
+    @Column(name = "car_id", nullable = false)
+    private long carId;
 
-    @Column(name = "model", nullable = false)
-    private String Car_model = "Opel Astra";
+    @Column(name = "car_model", nullable = false)
+    private String carModel;
 
-    @Column(name = "type", nullable = false)
-    private String Car_type = "PKW";
+    @Column(name = "car_type", nullable = false)
+    private String carType;
 
-    @Column(name = "availability", nullable = false)
-    private Boolean Car_availability = true;
+    @Column(name = "car_availability", nullable = false)
+    private Boolean carAvailability;
 
-    @Column(name = "fuel", nullable = false)
-    private String Type_of_fuel = "Gas";  
+    @Column(name = "type_of_fuel", nullable = false)
+    private String typeOfFuel;
 
     @Column(name = "seats")
-    private Integer Seats = 4;
+    private Integer seats;
 
-public long getCar_id() {
-        return Car_id;
+    // Getter und Setter
+    public long getCarId() {
+        return carId;
     }
 
-    public void setCar_id(long car_id) {
-        this.Car_id = car_id;
+    public void setCarId(long carId) {
+        this.carId = carId;
     }
 
-    public String getCar_model() {
-        return Car_model;
+    public String getCarModel() {
+        return carModel;
     }
 
-    public void setCar_model(String car_model) {
-        this.Car_model = car_model;
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
     }
 
-    public String getCar_type() {
-        return Car_type;
+    public String getCarType() {
+        return carType;
     }
 
-    public void setCar_type(String car_type) {
-        this.Car_type = car_type;
+    public void setCarType(String carType) {
+        this.carType = carType;
     }
 
-    public Boolean getCar_availability() {
-        return Car_availability;
+    public Boolean getCarAvailability() {
+        return carAvailability;
     }
 
-    public void setCar_availability(Boolean car_availability) {
-        this.Car_availability = car_availability;
+    public void setCarAvailability(Boolean carAvailability) {
+        this.carAvailability = carAvailability;
     }
 
-    public String getType_of_fuel() {
-        return Type_of_fuel;
+    public String getTypeOfFuel() {
+        return typeOfFuel;
     }
 
-    public void setType_of_fuel(String type_of_fuel) {
-        this.Type_of_fuel = type_of_fuel;
+    public void setTypeOfFuel(String typeOfFuel) {
+        this.typeOfFuel = typeOfFuel;
     }
 
     public Integer getSeats() {
-        return Seats;
+        return seats;
     }
 
     public void setSeats(Integer seats) {
-        this.Seats = seats;
+        this.seats = seats;
     }
 }

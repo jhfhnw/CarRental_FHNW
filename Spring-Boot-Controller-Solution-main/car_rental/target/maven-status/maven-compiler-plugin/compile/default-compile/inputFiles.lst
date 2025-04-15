@@ -1,12 +1,12 @@
-/workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/Controller/CarController.java
-/workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/Service/BookingService.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/domain/Booking.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/domain/Customer.java
-/workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/Service/CarService.java
+/workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/service/BookingService.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/WelcomeController.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/repository/BookingRepository.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/repository/CarRepository.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/domain/Fleet.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/domain/Car.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/CarApplication.java
+/workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/service/CarService.java
+/workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/controller/CarController.java
 /workspaces/CarRental_FHNW/Spring-Boot-Controller-Solution-main/car_rental/src/main/java/ch/fhnw/car_rental/data/domain/Admin.java

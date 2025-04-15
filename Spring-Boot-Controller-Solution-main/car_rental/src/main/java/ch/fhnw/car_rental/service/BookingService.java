@@ -12,25 +12,23 @@ public class BookingService {
     @Autowired
     private BookingRepository bookingRepository;
 
-    public Booking findBookingById(Long booking_id) {
-        Booking booking = bookingRepository.findById(booking_id).get();
-        return booking;
+    public Booking findBookingById(Long bookingId) {
+        return bookingRepository.findById(bookingId).orElse(null); // Variablenname angepasst
     }
 
     public List<Booking> getAllBookings() {
-        List<Booking> bookingList = bookingRepository.findAll();
-        return bookingList;
+        return bookingRepository.findAll();
     }
 
     public Booking addBooking(Booking booking) throws Exception {
-        if (booking.getCar() == null || booking.getUser() == null) {
+        if (booking.getCar() == null || booking.getCustomer() == null) {
             throw new Exception("Car and User cannot be null");
         }
         return bookingRepository.save(booking);
     }
 
-    public Booking deleteBooking(Long booking_id) {
-        Booking booking = findBookingById(booking_id);
+    public Booking deleteBooking(Long bookingId) {
+        Booking booking = findBookingById(bookingId); // Variablenname angepasst
         if (booking != null) {
             bookingRepository.delete(booking);
         }
@@ -40,7 +38,8 @@ public class BookingService {
     public Booking updateBooking(Booking booking) {
         return bookingRepository.save(booking);
     }
-    public Booking findBookingByBookingId(Integer booking_id) {
-        return bookingRepository.findByBooking_id(booking_id);
+
+    public Booking findBookingByBookingId(Integer bookingId) {
+        return bookingRepository.findByBookingId(bookingId); // Methodennamen angepasst
     }
 }

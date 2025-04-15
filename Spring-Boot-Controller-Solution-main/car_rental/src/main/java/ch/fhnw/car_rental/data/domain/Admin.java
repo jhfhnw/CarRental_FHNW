@@ -7,41 +7,42 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 
-
 @Entity
 @Table(name = "admin")
-
 public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private Integer User_id = 99;
+    private Integer userId = 99; // Feldname geändert
 
     @Column(name = "username", nullable = false)
-    private String Username = "Joe Tester";
+    private String username = "Joe Tester"; // Feldname geändert
 
     @Column(name = "password", nullable = false)
-    private String Password = "Test1234";
+    private String password = "Test1234"; // Feldname geändert
 
-    public int getUser_id() {
-        return User_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.User_id = user_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
-    public void setUsername (String username) {
-        this.Username = username;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

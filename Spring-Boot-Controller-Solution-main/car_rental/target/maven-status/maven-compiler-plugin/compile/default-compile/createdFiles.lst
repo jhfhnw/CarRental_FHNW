@@ -1,0 +1,12 @@
+ch/fhnw/car_rental/data/domain/Car.class
+ch/fhnw/car_rental/data/domain/Customer.class
+ch/fhnw/car_rental/WelcomeController.class
+ch/fhnw/car_rental/CarApplication.class
+ch/fhnw/car_rental/controller/CarController.class
+ch/fhnw/car_rental/service/BookingService.class
+ch/fhnw/car_rental/data/domain/Booking.class
+ch/fhnw/car_rental/data/repository/CarRepository.class
+ch/fhnw/car_rental/data/repository/BookingRepository.class
+ch/fhnw/car_rental/service/CarService.class
+ch/fhnw/car_rental/data/domain/Admin.class
+ch/fhnw/car_rental/data/domain/Fleet.class
