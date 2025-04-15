@@ -1,6 +1,6 @@
 package ch.fhnw.car_rental.data.repository;
 
-import ch.fhnw.data.domain.Booking;
+import ch.fhnw.car_rental.data.domain.Booking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

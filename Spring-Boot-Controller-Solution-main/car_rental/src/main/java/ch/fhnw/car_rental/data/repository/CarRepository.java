@@ -1,9 +1,9 @@
-package ch.fhnw.data.repository;
+package ch.fhnw.car_rental.data.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
-import ch.fhnw.data.domain.Car;
+import ch.fhnw.car_rental.data.domain.Car;
 
 @Repository
 //JpaRepository should be typed to the domain class and an ID type

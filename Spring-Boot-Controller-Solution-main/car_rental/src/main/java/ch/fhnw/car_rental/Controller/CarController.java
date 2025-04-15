@@ -1,4 +1,4 @@
-package ch.fhnw.Controller;
+package ch.fhnw.car_rental.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import ch.fhnw.car_rental.Service.CarService;
-import ch.fhnw.data.domain.Car;
-import ch.fhnw.data.repository.CarRepository;
+import ch.fhnw.car_rental.data.domain.Car;
+import ch.fhnw.car_rental.data.repository.CarRepository;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PutMapping;

@@ -2,8 +2,8 @@ package ch.fhnw.car_rental.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ch.fhnw.data.domain.Car;
-import ch.fhnw.data.repository.CarRepository;
+import ch.fhnw.car_rental.data.domain.Car;
+import ch.fhnw.car_rental.data.repository.CarRepository;
 import java.util.List;
 
 @Service

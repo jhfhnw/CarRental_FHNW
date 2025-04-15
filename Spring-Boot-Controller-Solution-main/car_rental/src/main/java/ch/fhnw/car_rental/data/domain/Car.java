@@ -1,4 +1,4 @@
-package ch.fhnw.data.domain;
+package ch.fhnw.car_rental.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
