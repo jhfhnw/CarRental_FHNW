@@ -43,21 +43,19 @@ public ResponseEntity<Car> getCar(@PathVariable Long id) {
     }
 }
 
-@GetMapping(path="/car", produces = "application/json")
+@GetMapping(path="https://ominous-couscous-66r746prq742xvvg-8080.app.github.dev/car", produces = "application/json")
 public List<Car> getCarList() {
     List<Car> carList = carService.getAllCars();
     if(carList.isEmpty())
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No cars found");
     return carList;
 }
-@PostMapping(path="/car", consumes="application/json", produces = "application/json")
+@PostMapping(path="https://ominous-couscous-66r746prq742xvvg-8080.app.github.dev/car", consumes="application/json", produces = "application/json")
 public ResponseEntity<Car> addCar(@RequestBody Car car) {
     try{
         car = carService.addCar(car);
-        
     } catch (Exception e) {
         throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
-
     }
     return ResponseEntity.ok(car);
     
