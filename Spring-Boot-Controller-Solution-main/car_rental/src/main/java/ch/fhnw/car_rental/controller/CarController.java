@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
-@RequestMapping(path="/car_rental")
+@RequestMapping(path="/api")
 public class CarController {
 
 @Autowired
@@ -43,14 +43,14 @@ public ResponseEntity<Car> getCar(@PathVariable Long id) {
     }
 }
 
-@GetMapping(path="https://ominous-couscous-66r746prq742xvvg-8080.app.github.dev/car", produces = "application/json")
+@GetMapping(path="/car", produces = "application/json")
 public List<Car> getCarList() {
     List<Car> carList = carService.getAllCars();
     if(carList.isEmpty())
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No cars found");
     return carList;
 }
-@PostMapping(path="https://ominous-couscous-66r746prq742xvvg-8080.app.github.dev/car", consumes="application/json", produces = "application/json")
+@PostMapping(path="/car", consumes="application/json", produces = "application/json")
 public ResponseEntity<Car> addCar(@RequestBody Car car) {
     try{
         car = carService.addCar(car);
