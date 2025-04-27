@@ -43,7 +43,7 @@ public ResponseEntity<Car> getCar(@PathVariable Long id) {
     }
 }
 
-@GetMapping(path="/car", produces = "application/json")
+@GetMapping(path="/carlist", produces = "application/json")
 public List<Car> getCarList() {
     List<Car> carList = carService.getAllCars();
     if(carList.isEmpty())
@@ -71,6 +71,7 @@ public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
     return ResponseEntity.noContent().build();
 }
 
+// update car - not working yet
 @PutMapping(path="/car/{id}", consumes="application/json", produces = "application/json")
 public ResponseEntity<Car> updateCar(@PathVariable Long id, @RequestBody Car car) {
     try{

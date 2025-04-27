@@ -23,7 +23,7 @@ public class Fleet {
     private Long id;
 
     @OneToMany
-    @JoinColumn(name = "menu_id")
+    @JoinColumn(name = "fleet_id")
     private List<Car> carList;
 
     @Column(name = "offer", nullable = false)

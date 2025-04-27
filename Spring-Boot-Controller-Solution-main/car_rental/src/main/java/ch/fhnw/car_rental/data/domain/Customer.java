@@ -14,19 +14,20 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private Integer customerId = 0; // Feldname geändert
+    private Integer customerId; // Standardwert entfernt
 
     @Column(name = "username", nullable = false)
-    private String username = "Muster Mustermann"; // Feldname geändert
+    private String username;
 
     @Column(name = "password", nullable = false)
-    private String password = "Mustermann1234"; // Feldname geändert
+    private String password;
 
-    public int getCustomerId() {
+    // Getter und Setter
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
