@@ -11,7 +11,7 @@ public class WelcomeController {
     @GetMapping(value="welcome")
     public String getWelcomeString() {
         
-        return "Hello, welcome to our Pizzeria!";
+        return "Hello, welcome to our Car Rental!";
     }
 
 
