@@ -14,20 +14,21 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private Integer userId = 99; // Feldname geändert
+    private Long adminId; // ID wird automatisch generiert
 
     @Column(name = "username", nullable = false)
-    private String username = "Joe Tester"; // Feldname geändert
+    private String username;
 
     @Column(name = "password", nullable = false)
-    private String password = "Test1234"; // Feldname geändert
+    private String password;
 
-    public int getUserId() {
-        return userId;
+    // Getter und Setter
+    public Long getAdminId() {
+        return adminId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setAdminId(Long adminId) {
+        this.adminId = adminId;
     }
 
     public String getUsername() {
