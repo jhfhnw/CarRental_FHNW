@@ -71,16 +71,29 @@ public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
     return ResponseEntity.noContent().build();
 }
 
-// update car - not working yet!
+// update car - not updating yet yet!
 @PutMapping(path="/car/{id}", consumes="application/json", produces = "application/json")
 public ResponseEntity<Car> updateCar(@PathVariable Long id, @RequestBody Car car) {
-    try{
-        car = carService.findCarById(id);
-        car = carService.updateCar(car);
+    try {
+        // Hole das bestehende Auto aus der Datenbank
+        Car existingCar = carService.findCarById(id);
+        if (existingCar == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Car not found");
+        }
+
+        // Aktualisiere die Felder des bestehenden Autos mit den neuen Werten
+        existingCar.setCarModel(car.getCarModel());
+        existingCar.setCarType(car.getCarType());
+        existingCar.setCarAvailability(car.getCarAvailability());
+        existingCar.setTypeOfFuel(car.getTypeOfFuel());
+        existingCar.setSeats(car.getSeats());
+
+        // Speichere das aktualisierte Auto
+        Car updatedCar = carService.updateCar(existingCar);
+        return ResponseEntity.ok(updatedCar);
     } catch (Exception e) {
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
     }
-    return ResponseEntity.ok(car);
 }
 
 }
