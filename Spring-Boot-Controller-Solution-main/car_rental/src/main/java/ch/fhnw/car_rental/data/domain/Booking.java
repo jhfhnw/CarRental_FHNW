@@ -22,7 +22,7 @@ public class Booking {
     private LocalDateTime endDate;
 
     @Column(name = "booking_cost", nullable = false)
-    private Number bookingCost;
+    private Double bookingCost;
 
     @ManyToOne
     @JoinColumn(name = "car_id", nullable = false)
@@ -57,11 +57,11 @@ public class Booking {
         this.endDate = endDate;
     }
 
-    public Number getBookingCost() {
+    public Double getBookingCost() {
         return bookingCost;
     }
 
-    public void setBookingCost(Number bookingCost) {
+    public void setBookingCost(Double bookingCost) {
         this.bookingCost = bookingCost;
     }
 

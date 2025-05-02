@@ -76,12 +76,26 @@ public class BookingController {
 
     // Creates new booking rather than updating the last one
     @PutMapping(path="/booking/{id}", consumes="application/json", produces = "application/json")
-    public ResponseEntity<Booking> updateBooking(@RequestBody Booking booking) {
-        try{
-            booking = bookingService.updateBooking(booking);
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
+    public ResponseEntity<Booking> updateBooking(@PathVariable Long id, @RequestBody Booking booking) {
+    try {
+        // Hole die bestehende Buchung aus der Datenbank
+        Booking existingBooking = bookingService.findBookingById(id);
+        if (existingBooking == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Booking not found");
         }
-        return ResponseEntity.ok(booking);
+
+        // Aktualisiere die Felder der bestehenden Buchung mit den neuen Werten
+        existingBooking.setStartDate(booking.getStartDate());
+        existingBooking.setEndDate(booking.getEndDate());
+        existingBooking.setBookingCost(booking.getBookingCost());
+        existingBooking.setCar(booking.getCar());
+        existingBooking.setCustomer(booking.getCustomer());
+
+        // Speichere die aktualisierte Buchung
+        Booking updatedBooking = bookingService.updateBooking(existingBooking);
+        return ResponseEntity.ok(updatedBooking);
+    } catch (Exception e) {
+        throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
     }
+}
 }
