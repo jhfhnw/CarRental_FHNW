@@ -1,6 +1,7 @@
 package ch.fhnw.car_rental.data.domain;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonFormat; // Import für JSON-Formatierung
 import jakarta.persistence.*;
 
 @Entity
@@ -10,16 +11,18 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private Integer bookingId; // Feldname geändert
+    private Integer bookingId;
 
     @Column(name = "start_date", nullable = false)
-    private Date startDate; // Feldname geändert
+    @JsonFormat(pattern = "HH:mm dd.MM.yyyy") // Format für JSON-Serialisierung/Deserialisierung
+    private LocalDateTime startDate;
 
     @Column(name = "end_date", nullable = false)
-    private Date endDate; // Feldname geändert
+    @JsonFormat(pattern = "HH:mm dd.MM.yyyy") // Format für JSON-Serialisierung/Deserialisierung
+    private LocalDateTime endDate;
 
     @Column(name = "booking_cost", nullable = false)
-    private Number bookingCost; // Feldname geändert
+    private Number bookingCost;
 
     @ManyToOne
     @JoinColumn(name = "car_id", nullable = false)
@@ -38,19 +41,19 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public Date getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 

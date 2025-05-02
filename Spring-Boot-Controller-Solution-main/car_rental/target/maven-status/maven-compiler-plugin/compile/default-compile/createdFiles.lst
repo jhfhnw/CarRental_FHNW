@@ -10,6 +10,7 @@ ch/fhnw/car_rental/service/BookingService.class
 ch/fhnw/car_rental/data/repository/AdminRepository.class
 ch/fhnw/car_rental/data/domain/Booking.class
 ch/fhnw/car_rental/controller/CustomerController.class
+ch/fhnw/car_rental/controller/BookingController.class
 ch/fhnw/car_rental/data/repository/CarRepository.class
 ch/fhnw/car_rental/data/repository/BookingRepository.class
 ch/fhnw/car_rental/data/repository/CustomerRepository.class
