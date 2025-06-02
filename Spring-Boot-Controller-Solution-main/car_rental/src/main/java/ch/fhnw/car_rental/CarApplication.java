@@ -20,6 +20,6 @@ public class CarApplication {
 
     @GetMapping(value = "/")
     public String getWelcomeString() {
-        return "Pizza Takeaway Service, welcome!";
+        return "Carrental Service, welcome!";
     }
 }

@@ -50,12 +50,20 @@ public class BookingController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No bookings found");
         return bookingList;
     }
-    
 
     // Booking costs are displayed weirdly rather than actual costs
     @PostMapping(path="/booking", consumes="application/json", produces = "application/json")
     public ResponseEntity<Booking> addBooking(@RequestBody Booking booking) {
-        try{
+        // Prüfe, ob das Auto im gewünschten Zeitraum verfügbar ist
+        boolean available = bookingService.isCarAvailable(
+            booking.getCar().getCarId(),
+            booking.getStartDate(),
+            booking.getEndDate()
+        );
+        if (!available) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Car is not available in the selected period");
+        }
+        try {
             booking = bookingService.addBooking(booking);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());

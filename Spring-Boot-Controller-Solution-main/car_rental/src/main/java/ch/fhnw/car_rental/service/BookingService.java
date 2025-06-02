@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ch.fhnw.car_rental.data.domain.Booking;
 import ch.fhnw.car_rental.data.repository.BookingRepository;
 import java.util.List;
+import java.time.LocalDateTime;
 
 @Service
 public class BookingService {
@@ -41,5 +42,17 @@ public class BookingService {
 
     public Booking findBookingByBookingId(Integer bookingId) {
         return bookingRepository.findByBookingId(bookingId); // Methodennamen angepasst
+    }
+
+    // Beispielmethode im BookingService
+    public boolean isCarAvailable(Long carId, LocalDateTime start, LocalDateTime end) {
+        List<Booking> bookings = bookingRepository.findByCar_CarId(carId);
+        for (Booking b : bookings) {
+            // Prüfe auf Überschneidung der Zeiträume
+            if (!(end.isBefore(b.getStartDate()) || start.isAfter(b.getEndDate()))) {
+                return false; // Überschneidung gefunden
+            }
+        }
+        return true;
     }
 }
