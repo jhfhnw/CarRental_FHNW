@@ -1,125 +1,168 @@
 # CarRental_FHNW
-Car rental project "Internet Technologies"
-Analysis
-Scenario
-User Stories
-Use Case
-UC 100: create Car 	100	Stakeholders
-Create new car	101	Technical services
-Delete car	102	Technical services
-UC 200: Booking	200	Stakeholders
-Book car	201	Employee/ Department head
-Change booking	202	Employee/ Department head
-Cancel booking	203	Employee/ Department head
-Filter by car	204	All stakeholders
-Submit damage	205	Employee/ Department head
-		
- 
-Use Case ID	Create new car
-Use Case Number	101
-Description	The system shall allow the technical services to create a new car.
-Responsible Actor	Technical services
-Participating Actor	-
-Trigger	Technical services want to add a new car.
-Preconditions	Role of actor verified with Meta-Workflow
-Inputs	Vehicle type, vehicle name, plates number, availability status, vehicle picture
-Scenario	Main	Alternative
- 	1. Responsible actor clicks on "Add new car"	 
- 	2. System opens overview about car properties and asks for input	 
- 	3. Responsible actor enters input	 
- 	4. Responsible actor clicks on "Save new car"	 
- 	5. System validates input	5a. Input is invalid
- 	 	5a1. Back to step 3
- 	6. System saves new car	 
-Result	New car is available in the system.	 
-Postconditions	Employees/ Department head can book a new car.	 
 
-Use Case ID	Delete car
-Use Case Number	102
-Description	The system shall allow the technical services to delete existing cars.
-Responsible Actor	Technical services
-Participating Actor	-
-Trigger	Technical services want to delete a car.
-Preconditions	UC 101: Create new car, Role of actor verified with Meta-Workflow
-Inputs	-
-Scenario	Main	Alternative
- 	1. Responsible actor clicks on a specific car and then "Edit car".	 
- 	2. Responsible actor clicks on "delete car".	 
- 	3. Responsible actor clicks on "delete car".	 
- 	4. System asks responsible actor if they are sure about deleting the car.	 
- 	 	4a. Responsible actor clicks on "no"
- 	 	4a1. Back to Step 1.
- 	5. System removes car from database.	 
-Result	Car is deleted in the database	 
-Postconditions	-	 
+CarRental_FHNW is a minimal Reference Project for car rental management, serving as a template for students in Internet Technologies.  
+**🚧: This is a template project. Adapt the documentation and code according to your use case. Remove all comments marked with "🚧:" before final submission.**
 
-Use Case ID	Create maintenance interval
-Use Case Number	103
-Description	The system shall allow the technical services to create maintenance intervals for each car.
-Responsible Actor	Technical services
-Participating Actor	-
-Trigger	Technical services wants to add maintenance interval.
-Preconditions	UC 101: Create new car, Role of actor verified with Meta-Workflow
-Inputs	Car, date of maintenance, duration, frequency of maintenance
-Scenario	Main	Alternative
- 	1. Responsible actor clicks on the respective car	 
- 	2. Responsible actor clicks on "new maintenance"	 
- 	3. Responsible actor enters input	 
- 	4. Responsible actor clicks on "save maintenance"	 
- 	 	4a. Input is invalid
- 	 	4a1. Back to step 3
- 	5. System adds new maintenance date to database	 
-Result	New maintenance date is saved 	 
-Postconditions	-	 
+---
 
-Use Case ID	Edit maintenance interval
-Use Case Number	104
-Description	The system shall allow the technical services to edit maintenance intervals for each car.
-Responsible Actor	Technical services
-Participating Actor	-
-Trigger	Technical services wants to edit maintenance.
-Preconditions	UC 103: Create maintenance interval, Role of actor verified with Meta-Workflow
-Inputs	Existing maintenance interval, car, date of maintenance, duration, frequency of maintenance
-Scenario	Main	Alternative
- 	1. Responsible actor clicks on the respective car	 
- 	2. Responsible actor clicks on "edit maintenance"	 
- 	3. Responsible actor edits the required input.	 
- 	4. Responsible actor clicks on "save maintenance" 	4a. Input is invalid
-4a1. Back to step 3
- 	5. System adds new input to the database	 
-Result	New maintenance input is saved	 
-Postconditions	-	 
+## Contents
 
-Use Case ID	Add vehicle types
-Use Case Number	105
-Description	The system shall allow the technical services to add a new vehicle type.
-Responsible Actor	Technical services
-Participating Actor	-
-Trigger	Technical services wants to add a new vehicle type.
-Preconditions	Role of actor verified with Meta-Workflow
-Inputs	List of vehicle types, Name of new vehicle type
-Scenario	Main	Alternative
- 	1. Responsible actor clicks on the "list of vehicle types" and then on "Add vehicles type"	 
- 	2. Responsible actor edits the required input.	 
- 	3. Responsible actor clicks on "save vehicle type" 	4a. Input is valid
- 	 	4b. Input is invalid
- 	 	4b1. Back to step 2
- 	4. System adds new vehicle type to the "List of vehicle types"	 
-Result	Technical services have an overview of all vehicle types in the system.	 
-Postconditions	New vehicle type can be taken as input for “UC 101: Create new car”	 
+- Analysis
+  - Scenario
+  - User Stories
+  - Use Case
+- Design
+  - Prototype Design
+  - Domain Design
+  - Business Logic
+- Implementation
+  - Backend Technology
+  - Frontend Technology
+- Project Management
+  - Roles
+  - Milestones
 
+---
 
-Design
-Wireframe
-Prototype
-Domain Design
-Business Logic
-Implementation
-Backend Technology
-Frontend Technology
-Execution
-Deployment to a PaaS
-Project Management
-Roles
-Milestones
+## Analysis
 
+**🚧: Reuse and adapt your own analysis and requirements here.**
+
+### Scenario
+
+CarRental_FHNW is a lightweight demonstration system enabling technical services and staff to manage a catalog of rental cars, bookings, and maintenance. It provides both administrative and user-facing functionality.
+
+### User Stories
+
+- As a Technical Service Admin, I want a web app accessible on both mobile devices and desktop computers.
+- As an Admin, I want a consistent visual appearance for easy navigation.
+- As an Admin, I want to list, edit, and create cars, bookings, and maintenance intervals.
+- As an Admin, I want to log in for authentication.
+- As an Employee/Department Head, I want to book and manage car reservations.
+- As a User, I want to view available cars and filter by type or availability.
+- (Optional) As a User, I want to authenticate to access personal data.
+
+### Use Cases
+
+- **UC-1 [Show all Cars]:** Admin can retrieve all cars in the system.
+- **UC-2 [Show Car Details]:** Admin or user can retrieve details of a specific car.
+- **UC-3 [Manage Cars]:** Admin can create, update, and delete cars.
+- **UC-4 [Manage Bookings]:** Employees/Department Heads can create, update, and cancel bookings.
+- **UC-5 [Submit Damage]:** Employees/Department Heads can submit reports of car damage.
+- **UC-6 [Manage Maintenance]:** Admin can create or edit maintenance intervals.
+- **UC-7 [Filter Cars]:** Users can filter available cars by type, status, etc.
+
+---
+
+## Design
+
+**🚧: Decide on your CI, color scheme, graphics, layout, and UX. Add wireframes and diagrams as needed.**
+
+### Wireframe
+
+**🚧: Start with a sitemap and wireframe (draw.io or similar). List the main pages: Home, Car List, Booking, Maintenance, Admin.**
+
+### Prototype
+
+**🚧: Optionally, create a prototype using placeholder data.**
+
+### Domain Design
+
+**🚧: Provide an entity-relationship or UML class diagram.**
+
+Main domain entities may include: Car, Booking, Maintenance, User, VehicleType.
+
+### Business Logic
+
+**Example:**
+
+For booking a car (UC-4):
+
+- **Path:** `/api/bookings`
+- **Method:** `POST`, `GET`, `PUT`, `DELETE`
+- **Logic:** Employees can create, modify, or cancel bookings for available cars. The system checks for overlapping bookings and car availability.
+
+API documentation available at `/swagger-ui.html`.
+
+---
+
+## Implementation
+
+### Backend Technology
+
+- Spring Boot
+- Spring Data JPA
+- Java Persistence API (JPA)
+- H2 Database (in-memory or persistent)
+
+**Dependencies (excerpt):**
+```xml
+<dependency>
+  <groupId>com.h2database</groupId>
+  <artifactId>h2</artifactId>
+  <scope>runtime</scope>
+</dependency>
+<dependency>
+  <groupId>org.springdoc</groupId>
+  <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+  <version>2.3.0</version>
+</dependency>
+```
+
+**🚧: Describe if you used Spring Initializr or adapted dependencies. Document database setup (in-memory/persistent) and placeholder data initialization.**
+
+### Frontend Technology
+
+**🚧: List the frontend framework or app builder used (e.g., Budibase, React, Angular). Describe main views and APIs used for each view.**
+
+---
+
+## Execution
+
+**🚧: List steps to run the application and update configurations. For Codespaces or local environments:**
+
+1. Clone the repository.
+2. Start the backend (`CarRentalApplication.java`).
+3. Open required ports as needed.
+4. Deploy or connect the frontend app.
+5. Update API endpoints in frontend datasource configuration.
+
+**Deployment to PaaS (Optional):**
+
+- Use Dockerfile provided in the root (adapt jar name as needed).
+- Deploy to Render or a similar PaaS.
+- Link backend API to your frontend app.
+
+---
+
+## Project Management
+
+### Roles
+
+- Backend Developer: [Your Name]
+- Frontend Developer: [Your Name]
+- (Add more roles as needed)
+
+### Milestones
+
+- Analysis and Requirements
+- Prototype and Wireframe
+- Domain Model Design
+- Business Logic & API Design
+- Backend and Data Layer Implementation
+- Frontend and Security Integration
+- (Optional) Deployment
+
+---
+
+## Maintainers
+
+- [Your Name(s)]
+
+---
+
+## License
+
+Apache License, Version 2.0
+
+---
